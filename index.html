@@ -7,13 +7,35 @@
     <title>MEMENTO•MORI Rune #127803</title>
     <link rel="icon" href="mori.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-toggle {
+            display: none;
+            /* 默认隐藏折叠按钮 */
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                /* 默认隐藏导航链接 */
+                flex-direction: column;
+                /* 垂直排列 */
+            }
+            .nav-toggle {
+                display: block;
+                /* 在移动端显示折叠按钮 */
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <ul class="nav-links">
+            <div class="nav-toggle" onclick="toggleNav()">☰</div>
+            <!-- 添加折叠按钮 -->
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="https://magiceden.io/runes/MEMENTO%E2%80%A2MORI">Mori-Magic-Eden-DEX</a></li>
                 <li><a href="#tokenomics">Tokenomics</a></li>
@@ -193,6 +215,13 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; // 切换显示状态
+        }
+    </script>
 </body>
 
 </html>
