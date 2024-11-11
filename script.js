@@ -17,3 +17,21 @@ function createWord() {
 }
 
 setInterval(createWord, 500);
+
+function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; // 切换显示状态
+}
+
+function openModal() {
+    document.getElementById('petitionModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('petitionModal').style.display = 'none';
+}
+
+// 页面加载时自动打开弹窗
+window.onload = function() {
+    openModal();
+};

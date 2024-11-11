@@ -33,8 +33,19 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
+            <!-- 添加语言选择器到导航栏左侧 -->
+            <select id="language-selector" onchange="changeLanguage()" style="margin-right: 20px;">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="es">Español</option>
+            <option value="ko">한국어</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ar">العربية</option>
+            <option value="zh">简体中文</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
             <div class="nav-toggle" onclick="toggleNav()">☰</div>
-            <!-- 添加折叠按钮 -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="https://magiceden.io/runes/MEMENTO%E2%80%A2MORI">Mori-Magic-Eden-DEX</a></li>
@@ -50,6 +61,24 @@
         <div class="title-text">
             <h1>MEMENTO•MORI Rune #127803</h1>
             <h2>Only by understanding your death can you truly live your life!</h2>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="petitionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>To the Binance Team and @heyibinance:</h2>
+            <p>We are members of the MEMENTO•MORI Rune #127803 community, submitting our listing application to Binance with great enthusiasm and hoping for your support! MEMENTO•MORI fully aligns with the "free listing" criteria proposed by @heyibinance,
+                as we are a small-cap project with a strong and unique community culture. Here are the reasons for our petition:</p>
+            <ol>
+                <li><strong>Deep Community Culture:</strong> MEMENTO•MORI embodies the spirit of "Remember Death," reminding people to cherish time and live in the present...</li>
+                <li><strong>Small Cap, Big Potential:</strong> While MEMENTO•MORI currently has a small market cap, its growth potential is immense...</li>
+                <li><strong>Aligned with Binance Listing Standards:</strong> Our project excels in transparency, compliance, and market demand...</li>
+                <li><strong>Creating a Win-Win Partnership:</strong> We look forward to collaborating with Binance...</li>
+            </ol>
+            <p>We sincerely ask @heyibinance to hear the voice of our community and support MEMENTO•MORI's listing on Binance. Thank you for your attention and support!</p>
+            <p>— MEMENTO•MORI Rune #127803 Community</p>
         </div>
     </div>
 
@@ -86,7 +115,7 @@
                 <a href="https://magiceden.io/runes/MEMENTO%E2%80%A2MORI" target="_blank">
                     <img src="mori-Magic-Eden.png" alt="Magic Eden">
                     <h3>Magic Eden</h3>
-                    <p>The largest ordinasl and runes exchange globally</p>
+                    <p>The largest ordinals and runes exchange globally</p>
                 </a>
             </div>
             <div class="exchange-logo-item">
@@ -124,7 +153,7 @@
                 <a href="https://magiceden.io/runes/MEMENTO%E2%80%A2MORI" target="_blank">
                     <img src="mori-Magic-Eden.png" alt="OKX">
                     <h3>Magic Eden SWAP</h3>
-                    <p>The largest ordinasl and runes exchange globally</p>
+                    <p>The largest ordinals and runes exchange globally</p>
                 </a>
             </div>
         </div>
@@ -220,6 +249,191 @@
         function toggleNav() {
             const navLinks = document.getElementById('nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex'; // 切换显示状态
+        }
+
+        const translations = {
+            en: {
+                title: "MEMENTO•MORI Rune #127803",
+                subtitle: "Only by understanding your death can you truly live your life!",
+                exchanges: "Exchanges",
+                totalSupply: "Total Supply",
+                airdrop: "Airdrop",
+                circulatingSupply: "Circulating Supply",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% fair and free distribution, no pre-mining, no team allocation",
+                decentralizedToken: "A truly decentralized community token",
+                founderTitle: "Founder of Bitcoin Runes",
+                founderDescription: "The founder of Bitcoin Ordinals and Runes, @Casey, has opened a new chapter for Bitcoin.",
+                communityLinks: "Community Links",
+                aboutUs: "About Us",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "Version: 1.0",
+                // ... 其他翻译
+            },
+            ja: {
+                title: "メメント・モリ ルーン #127803",
+                subtitle: "死を理解することでのみ、真に生きることができる！",
+                exchanges: "取引所",
+                totalSupply: "総供給量",
+                airdrop: "エアドロップ",
+                circulatingSupply: "循環供給量",
+                tokenomics: "トークノミクス",
+                fairDistribution: "100% 公平かつ無料の配布、事前マイニングなし、チーム配分なし",
+                decentralizedToken: "真に分散化されたコミュニティトークン",
+                founderTitle: "ビットコインルーンの創設者",
+                founderDescription: "@Caseyはビットコインの新しい章を開きました。",
+                communityLinks: "コミュニティリンク",
+                aboutUs: "私たちについて",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "バージョン: 1.0",
+                // ... 其他翻译
+            },
+            es: {
+                title: "MEMENTO•MORI Runa #127803",
+                subtitle: "¡Solo entendiendo tu muerte puedes vivir verdaderamente tu vida!",
+                exchanges: "Intercambios",
+                totalSupply: "Suministro Total",
+                airdrop: "Airdrop",
+                circulatingSupply: "Suministro Circulante",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% distribución justa y gratuita, sin pre-minado, sin asignación de equipo",
+                decentralizedToken: "Un token comunitario verdaderamente descentralizado",
+                founderTitle: "Fundador de Bitcoin Runes",
+                founderDescription: "El fundador de Bitcoin Ordinals y Runes, @Casey, ha abierto un nuevo capítulo para Bitcoin.",
+                communityLinks: "Enlaces de la Comunidad",
+                aboutUs: "Sobre Nosotros",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "Versión: 1.0",
+                // ... 其他翻译
+            },
+            ko: {
+                title: "메멘토 모리 룬 #127803",
+                subtitle: "죽음을 이해해야만 진정으로 삶을 살 수 있습니다!",
+                exchanges: "거래소",
+                totalSupply: "총 공급량",
+                airdrop: "에어드랍",
+                circulatingSupply: "유통 공급량",
+                tokenomics: "토큰 경제",
+                fairDistribution: "100% 공정하고 무료 배포, 사전 채굴 없음, 팀 할당 없음",
+                decentralizedToken: "진정한 분산 커뮤니티 토큰",
+                founderTitle: "비트코인 룬의 창립자",
+                founderDescription: "비트코인 오디널스와 룬의 창립자 @Casey가 비트코인을 위한 새로운 장을 열었습니다.",
+                communityLinks: "커뮤니티 링크",
+                aboutUs: "우리에 대해",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "버전: 1.0",
+                // ... 其他翻译
+            },
+            hi: {
+                title: "MEMENTO•MORI रून #127803",
+                subtitle: "केवल अपनी मृत्यु को समझकर आप वास्तव में अपने जीवन को जी सकते हैं!",
+                exchanges: "एक्सचेंज",
+                totalSupply: "कुल आपूर्ति",
+                airdrop: "एयरड्रॉप",
+                circulatingSupply: "परिवर्तनशील आपूर्ति",
+                tokenomics: "टोकनॉमिक्स",
+                fairDistribution: "100% निष्पक्ष और मुफ्त वितरण, कोई पूर्व-खनन नहीं, कोई टीम आवंटन नहीं",
+                decentralizedToken: "एक सच्चा विकेंद्रीकृत सामुदायिक टोकन",
+                founderTitle: "बिटकॉइन रून के संस्थापक",
+                founderDescription: "बिटकॉइन ऑर्डिनल्स और रून के संस्थापक @Casey ने बिटकॉइन के लिए एक नया अध्याय खोला है।",
+                communityLinks: "समुदाय लिंक",
+                aboutUs: "हमारे बारे में",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "संस्करण: 1.0",
+                // ... 其他翻译
+            },
+            ar: {
+                title: "MEMENTO•MORI رونية #127803",
+                subtitle: "فقط من خلال فهم موتك يمكنك أن تعيش حياتك حقًا!",
+                exchanges: "البورصات",
+                totalSupply: "إجمالي العرض",
+                airdrop: "إيردروب",
+                circulatingSupply: "العرض المتداول",
+                tokenomics: "اقتصاديات التوكن",
+                fairDistribution: "توزيع عادل ومجاني بنسبة 100%، لا تعدين مسبق، لا تخصيص لفريق",
+                decentralizedToken: "توكن مجتمعي لامركزي حقًا",
+                founderTitle: "مؤسس رunes بيتكوين",
+                founderDescription: "مؤسس بيتكوين أوردينالز ورونز، @Casey، قد فتح فصلًا جديدًا لبيتكوين.",
+                communityLinks: "روابط المجتمع",
+                aboutUs: "معلومات عنا",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "الإصدار: 1.0",
+                // ... 其他翻译
+            },
+            zh: {
+                title: "MEMENTO•MORI 符文 #127803",
+                subtitle: "只有理解你的死亡，你才能真正地生活！",
+                exchanges: "交易所",
+                totalSupply: "总供应量",
+                airdrop: "空投",
+                circulatingSupply: "流通供应量",
+                tokenomics: "代币经济",
+                fairDistribution: "100% 公平和免费的分配，没有预挖，没有团队分配",
+                decentralizedToken: "一个真正去中心化的社区代币",
+                founderTitle: "比特币符文的创始人",
+                founderDescription: "比特币序数和符文的创始人 @Casey，开启了比特币的新篇章。",
+                communityLinks: "社区链接",
+                aboutUs: "关于我们",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "版本: 1.0",
+                // ... 其他翻译
+            },
+            fr: {
+                title: "MEMENTO•MORI Rune #127803",
+                subtitle: "Ce n'est qu'en comprenant votre mort que vous pouvez vraiment vivre votre vie !",
+                exchanges: "Échanges",
+                totalSupply: "Offre Totale",
+                airdrop: "Airdrop",
+                circulatingSupply: "Offre Circulante",
+                tokenomics: "Tokenomics",
+                fairDistribution: "Distribution 100% équitable et gratuite, pas de pré-minage, pas d'allocation d'équipe",
+                decentralizedToken: "Un véritable token communautaire décentralisé",
+                founderTitle: "Fondateur des Runes Bitcoin",
+                founderDescription: "Le fondateur des Ordinals et Runes Bitcoin, @Casey, a ouvert un nouveau chapitre pour Bitcoin.",
+                communityLinks: "Liens Communautaires",
+                aboutUs: "À Propos de Nous",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "Version: 1.0",
+                // ... 其他翻译
+            },
+            de: {
+                title: "MEMENTO•MORI Rune #127803",
+                subtitle: "Nur durch das Verständnis deines Todes kannst du wirklich leben!",
+                exchanges: "Börsen",
+                totalSupply: "Gesamtangebot",
+                airdrop: "Airdrop",
+                circulatingSupply: "Umlaufangebot",
+                tokenomics: "Tokenomics",
+                fairDistribution: "100% faire und kostenlose Verteilung, kein Pre-Mining, keine Teamzuweisung",
+                decentralizedToken: "Ein wirklich dezentraler Community-Token",
+                founderTitle: "Gründer der Bitcoin Runes",
+                founderDescription: "Der Gründer der Bitcoin Ordinals und Runes, @Casey, hat ein neues Kapitel für Bitcoin eröffnet.",
+                communityLinks: "Gemeinschaftslinks",
+                aboutUs: "Über Uns",
+                copyright: "&copy; 2024 MEMENTO•MORI",
+                version: "Version: 1.0",
+                // ... 其他翻译
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('language-selector').value;
+            document.title = translations[selectedLanguage].title;
+            document.querySelector('.title-text h1').innerText = translations[selectedLanguage].title;
+            document.querySelector('.title-text h2').innerText = translations[selectedLanguage].subtitle;
+            document.querySelector('.exchange-section h2').innerText = translations[selectedLanguage].exchanges;
+            document.querySelector('.tokenomics-section h2').innerText = translations[selectedLanguage].tokenomics;
+            document.querySelector('.tokenomics-item:nth-child(1) h3').innerText = translations[selectedLanguage].totalSupply;
+            document.querySelector('.tokenomics-item:nth-child(2) h3').innerText = translations[selectedLanguage].airdrop;
+            document.querySelector('.tokenomics-item:nth-child(3) h3').innerText = translations[selectedLanguage].circulatingSupply;
+            document.querySelector('.tokenomics-description p:nth-child(1)').innerText = translations[selectedLanguage].fairDistribution;
+            document.querySelector('.tokenomics-description p:nth-child(2)').innerText = translations[selectedLanguage].decentralizedToken;
+            document.querySelector('.founder-section h3').innerText = translations[selectedLanguage].founderTitle;
+            document.querySelector('.founder-info p').innerText = translations[selectedLanguage].founderDescription;
+            document.querySelector('.footer-section h3:nth-child(1)').innerText = translations[selectedLanguage].communityLinks;
+            document.querySelector('.footer-section h3:nth-child(2)').innerText = translations[selectedLanguage].aboutUs;
+            document.querySelector('.copyright').innerHTML = translations[selectedLanguage].copyright;
+            document.querySelector('.version').innerText = translations[selectedLanguage].version;
         }
     </script>
 </body>
