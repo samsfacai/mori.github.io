@@ -579,3 +579,59 @@ footer {
     color: #eee;
     /* 更亮的灰色 */
 }
+
+.media-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    /* 渐变背景 */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* 阴影效果 */
+}
+
+.video-container {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* 圆角视频容器 */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+    /* 缩放过渡效果 */
+}
+
+.social-logo:hover {
+    transform: scale(1.1);
+    /* 悬停时放大 */
+}
+
+.youtube-link {
+    font-size: 18px;
+    color: #FF0000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #FF0000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 背景和文字颜色过渡 */
+}
+
+.youtube-link:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
